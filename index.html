@@ -40,78 +40,89 @@ font-size: 18;
             <h1 style="font-style:impact">Analysis for my personal website by Google Analytics</h1>
             <h2 style="font-style:impact">HKBU JOUR2106 Homework6 by Lee Yee Man, Jam</h2>
 		</div> 
-	<br>    
-    <div id="main1" style="width: 600px;height:400px;"></div>
-        <br>
-<div class="quote">
+
+	    <h2> How many people go to the website? </h2>
+     
+<div id="view" style="width: 800px;height:400px;"></div>
+<script type="text/javascript">
+	
+        // 基于准备好的dom，初始化echarts实例
+ var myChart = echarts.init(document.getElementById('view'));
+     
+option = {
+
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#6a7985'
+            }
+        }
+    },
+
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ["1 April", "2 April", "3 April", "4 April", "5 April", "6 April","7 April","8 April","9 April","10 April","11 April","12 April","13 April","14 April","15 April","16 April","17 April","18 April","19 April","20 April","21 April","22 April","23 April","24 April","25 April","26 April","27 April",]
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+      dataZoom: [
+        {
+            type: 'slider',
+            xAxisIndex: 0,
+            filterMode: 'empty',
+            start: 0,
+            end: 45,
+        },
+        {
+            type: 'inside',
+            xAxisIndex: 0,
+            filterMode: 'empty'
+        },
+    ],
+    series : [
+        {
+            name:'Total no. of Viewers',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[35,1,5,2,0,1,23,2,2,5,2,1,1,0,1,0,0,0,0,0,0,0,2,0,2,1,1],
+             markPoint : {
+                data : [
+                {name : 'Facebook_one', value : 35, xAxis: 0, yAxis: 35},
+                {name : 'Facebook_two', value : 23, xAxis: 6, yAxis: 23},
+                {name : 'Linkedin', value : 5, xAxis: 9, yAxis: 5}
+                ]
+            },
+            
+        },
+       
+    ]
+};
+
+ myChart.setOption(option);
+    </script>
+	    
+	    
+
+	    <div class="quote">
 data analysis
 </div>
 </header>
 	<br>
-
-    <script type="text/javascript">
-        // Initialse eCharts
-        option = {
-            "title": {
-                "text": "How many people go to the website?",
-		"subtext": '數據為按年第四季（千戶）'
-   },
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow'
-                    }
-                },
-	legend: {
-		x: 'center',
-                y: 'bottom',
-        data: ['公營租住房屋']
-	    },
-            "xAxis": [{
-                "type": "category",
-                "data": [
-                    1986,
-                    1991,
-                    1996,
-		    2001,
-		    2006,
-	            2011,
-	            2016
-                ],
-                "axisTick": {
-                    "alignWithLabel": true
-                }
-            }],
-    "yAxis": [{
-        "type": "value"
-    }],
-    "series": [{
-        "name": "公營租住房屋",
-        "type": "bar",
-        "data": [
-            543.3,
-            609.7,
-            655.1,
-            624.7,
-            676.1,
-            731.4,
-            773.3
-        ]
-    },
-	                "markPoint": {
-                    "data": [{
-                        "type": "max",
-                        "name": "max"
-                    }]
-                }
-    }
-    }]
-};
-        // Use the option to display chart
-        var myChart1 = echarts.init(document.getElementById('main1'));
-        myChart1.setOption(option);
-        option['series'][0]['stack'] = 'population';
-        option['series'][1]['stack'] = 'population';
-</script>	
+	
 </body>
 </html>
