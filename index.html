@@ -37,31 +37,18 @@ font-size: 18;
 <body>  
     <header>
 	 <div class="jumbotron">
-            <h1 style="font-style:impact">Housing in Hong Kong</h1>
-            <h2 style="font-style:impact">HKBU JOUR2106 Homework5 by Lee Yee Man, Jam</h2>
+            <h1 style="font-style:impact">Analysis for my personal website by Google Analytics</h1>
+            <h2 style="font-style:impact">HKBU JOUR2106 Homework6 by Lee Yee Man, Jam</h2>
 		</div> 
 	<br>    
     <div id="main1" style="width: 600px;height:400px;"></div>
         <br>
-	<br>
-    <div id="main2" style="width: 600px;height:400px;"></div>
-        <br>
-	<br>
 <div class="quote">
-根據圖表一，我們可以看到過去三十年，香港的房屋需求主要私人房屋市場支撐。私人永久性房屋的家庭住戶數目隨年拋離其餘的房屋住戶數目。
-然而，近年本港私人樓宇的價格及租金均居高不下。舉例而言，一個實用面積228平方呎、位於啟德的新盤售價亦要484萬起。對一般月入一、兩萬元的市民的而言，實在難以負擔。
-<br><br>
-圖表二則反映，本港現時有近五成市民屬租戶。在目前全民退保停滯不前下，讓市民置業能為晚年退休生活作出保障，並間接為「庫房」減壓。
-因此，政府也有需要檢討現行樓宇買賣政策。新加坡的組屋政策讓八成新加坡人成為了業主，也許香港政府可從中借鑒。
-<br><br>
-另外，政府的數據亦未能即時反映本港惡劣住房的問題。政府統計處最新出版，論及劏房、板間房等問題的報告已是2016年3月份的事，至今已過一年，
-有別於其他房屋數據按月更新的情況。因此，政府亦有必要長期緊密審視分間樓宇單位的數據情況，從而協助困擾於惡劣住房問題的市民。
+data analysis
 </div>
 </header>
 	<br>
-<div class="footer">
-<a href="https://data.gov.hk/en/">Reference: 資料一線通 DATA.GOV.HK</a>
-</div>
+
     <script type="text/javascript">
         // Initialse eCharts
         option = {
@@ -160,48 +147,5 @@ font-size: 18;
         option['series'][0]['stack'] = 'population';
         option['series'][1]['stack'] = 'population';
 </script>
-<div id="main2" style="width: 600px;height:400px;"></div>
-	<script type="text/javascript">
-        var myChart2 = echarts.init(document.getElementById('main2'));
-	var option = {
-    title : {
-        text: '香港2016年第四季按居所租住權劃分的家庭住戶數目',
-        x:'center'
-    },
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-    legend: {
-        x: 'center',
-        y: 'bottom',
-        data: ['自置居所住戶(公營房屋)', '自置居所住戶(私人房屋)', '全租戶', '合租戶', '居所由僱主提供', '其他']
-    },
-    series : [
-        {
-            name: '千戶',
-            type: 'pie',
-            radius : '55%',
-            center: ['50%', '60%'],
-            data:[
-                {value:364.9, name:'自置居所住戶(公營房屋)'},
-                {value:885.7, name:'自置居所住戶(私人房屋)'},
-                {value:1142.4, name:'全租戶'},
-                {value:11.0, name:'合租戶'},
-                {value:43.8, name:'居所由僱主提供'},
-	        {value:58.9, name:'其他'}
-            ],
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            }
-        }
-    ]
-};
-	 myChart2.setOption(option);
-        </script>
 </body>
 </html>
